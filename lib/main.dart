@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/mesto.dart';
 
 List<String> mesta = ['Kutna Hora', 'Brno', 'Cesky Krumlov'];
 
@@ -64,7 +65,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
     List<Widget> listItems = [];
     for (var m in mesta) {
-      listItems.add(ListTile(title: Text(m)));
+      listItems.add(ListTile(
+          title: Text(m),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MestoPage(title: m)),
+            );
+          },
+      ),
+      );
     }
 
     return Scaffold(
