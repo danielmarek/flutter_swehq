@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+List<String> mesta = ['Kutna Hora', 'Brno', 'Cesky Krumlov'];
+
 void main() {
   runApp(MyApp());
 }
@@ -59,6 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+    List<Widget> listItems = [];
+    for (var m in mesta) {
+      listItems.add(ListTile(title: Text(m)));
+    }
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -67,17 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         padding: const EdgeInsets.all(8),
-        children: <Widget>[
-          ListTile(
-            title: Text('Kutna Hora'),
-          ),
-          ListTile(
-            title: Text('Brno'),
-          ),
-          ListTile(
-            title: Text('Cesky Krumlov'),
-          ),
-        ],
+        children: listItems,
       ),
       floatingActionButton: FloatingActionButton(
         // onPressed: _incrementCounter,
