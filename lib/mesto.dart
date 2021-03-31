@@ -10,10 +10,8 @@ class MestoPage extends StatefulWidget {
 }
 
 class _MestoPageState extends State<MestoPage> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -23,7 +21,9 @@ class _MestoPageState extends State<MestoPage> {
         children: [],
       ),
       floatingActionButton: FloatingActionButton(
-        // onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.pop(context);
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
